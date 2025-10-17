@@ -1,6 +1,6 @@
 {
   "name": "flxhelpers",
-  "version": "1.0.7",
+  "version": "1.1.1",
   "description": "Typescript/Javascript utilities/helpers functions",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -28,7 +28,9 @@
       "require": "./dist/types/*.js"
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc",
     "prepublishOnly": "npm run build"
@@ -37,7 +39,12 @@
     "type": "git",
     "url": "git+https://github.com/flxtreme/flxhelpers.git"
   },
-  "keywords": ["helpers", "utilities", "functions", "flxtremee"],
+  "keywords": [
+    "helpers",
+    "utilities",
+    "functions",
+    "flxtremee"
+  ],
   "type": "module",
   "author": "flxtremee",
   "license": "ISC",
@@ -54,6 +61,7 @@
   "dependencies": {
     "bcrypt": "^6.0.0",
     "date-fns": "^4.1.0",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "node-fetch": "^3.3.2"
   }
 }

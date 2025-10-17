@@ -20,6 +20,7 @@ import baseUtils from "./utils/baseUtils";
 import EmailHelper from "./helpers/emailHelper";
 import EncryptionHelper from "./helpers/encryptionHelper";
 import ValidationHelper from "./helpers/validationHelper";
+import fetcher from "./utils/fetcher/server";
 
 /**
  * Exported namespaces
@@ -30,4 +31,4 @@ import ValidationHelper from "./helpers/validationHelper";
  * - `EncryptionHelper`: Password hashing & UUID generation (Node-only)
  * - `ValidationHelper`: Input validation for request bodies (Node-only)
  */
-export { dateUtils, baseUtils, EmailHelper, EncryptionHelper, ValidationHelper };
+export { fetcher, dateUtils, baseUtils, EmailHelper, EncryptionHelper, ValidationHelper };

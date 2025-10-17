@@ -18,13 +18,22 @@ yarn add flxhelpers
 You can import everything from the root index:
 
 ```typescript
-import { 
+// server
+import {
+  fetcher, 
   baseUtils, 
   dateUtils,
   EmailHelper, 
   EncryptionHelper,
   ValidationHelper 
 } from "flxhelpers";
+
+// client
+import {
+  fetcher, 
+  baseUtils, 
+  dateUtils
+} from "flxhelpers/client";
 ```
 
 
@@ -83,22 +92,22 @@ const { slugify, isValidSlug, capitalizeWords, isBlank, sleep } = baseUtils;
 // Slugify a string
 slugify("Hello World!");
 // → "hello-world"
+```
 
-// Validate slug
-isValidSlug("hello-world");
-// → true
+### 🔹 fetcher (client & server)
 
-// Capitalize words
-capitalizeWords("the quick brown fox");
-// → "The Quick Brown Fox"
+```typescript
+// client
+import { fetcher } from "flxhelpers/client";
+// server
+import { fetcher } from "flxhelpers";
 
-// Check blank
-isBlank("   ");
-// → true
 
-// Sleep helper
-await sleep(1000);
-// → waits for 1 second
+// same usage
+const response = await fetcher<{ id: number; title: string }[]>("/api/posts", {
+  method: "GET",
+  token: accessToken,
+});
 ```
 
 ## Custom Helpers (Server-Side only)

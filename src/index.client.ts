@@ -9,6 +9,7 @@
 
 import dateUtils from "./utils/dateUtils";
 import baseUtils from "./utils/baseUtils";
+import fetcher from "./utils/fetcher/client";
 
 /**
  * Browser-safe exports
@@ -16,4 +17,4 @@ import baseUtils from "./utils/baseUtils";
  * - `dateUtils`: Date utilities powered by date-fns
  * - `baseUtils`: Extended Lodash utilities with custom helpers
  */
-export { dateUtils, baseUtils };
+export { fetcher, dateUtils, baseUtils };
