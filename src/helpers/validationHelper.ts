@@ -5,7 +5,7 @@ import { TValidation, ValidateInputOptions } from "../types/vaildationTypes";
  * -------------------------
  * Provides shared functionality for all controllers, including input validation.
  */
-export class ValidationHelper {
+export default class ValidationHelper {
 
   /**
    * valdiate

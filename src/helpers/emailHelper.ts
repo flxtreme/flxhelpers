@@ -5,7 +5,7 @@ import dns from "dns/promises";
  * -------------------------
  * Provides methods for validating and sanitizing email addresses.
  */
-export class EmailHelper {
+export default class EmailHelper {
   /** Simple regex for general email syntax */
   private static readonly EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 

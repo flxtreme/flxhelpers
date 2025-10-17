@@ -1,11 +1,7 @@
 import dateUtils from "./utils/dateUtils";
 import baseUtils from "./utils/baseUtils";
+import EmailHelper from "./helpers/emailHelper";
+import EncryptionHelper from "./helpers/encryptionHelper";
+import ValidationHelper from "./helpers/validationHelper";
 
-export * as bcrypt from "bcrypt";
-
-export * from './types/vaildationTypes';
-export * from './helpers/emailHelper';
-export * from './helpers/encryptionHelper';
-export * from './helpers/validationHelper';
-
-export { dateUtils, baseUtils}
+export { dateUtils, baseUtils, EmailHelper, EncryptionHelper, ValidationHelper }

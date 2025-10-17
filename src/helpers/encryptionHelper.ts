@@ -5,7 +5,7 @@ import bcrypt from "bcrypt";
  * -------------------------
  * Provides utility methods for password hashing, verification, and ID generation.
  */
-export class EncryptionHelper {
+export default class EncryptionHelper {
   private static defaultSaltRounds = 10;
 
   /**
