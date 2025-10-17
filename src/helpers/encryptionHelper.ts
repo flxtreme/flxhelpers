@@ -1,5 +1,4 @@
 import bcrypt from "bcrypt";
-import { v4 as uuidv4 } from "uuid";
 
 /**
  * EncryptionHelper
@@ -27,13 +26,5 @@ export class EncryptionHelper {
    */
   static async verifyPassword(password: string, hash: string): Promise<boolean> {
     return await bcrypt.compare(password, hash);
-  }
-
-  /**
-   * Generates a unique identifier using UUID v4.
-   * @returns UUID string
-   */
-  static generateId(): string {
-    return uuidv4();
   }
 }

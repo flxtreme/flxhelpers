@@ -18,17 +18,15 @@ yarn add flxhelpers
 You can import everything from the root index:
 
 ```typescript
-import { flxUtils, EmailHelper, EncryptionHelper, ValidationHelper } from "flxhelpers";
+import { 
+  baseUtils, 
+  dateUtils,
+  EmailHelper, 
+  EncryptionHelper,
+  ValidationHelper 
+} from "flxhelpers";
 ```
 
-Or import them individually:
-
-```typescript
-import { flxUtils } from "flxhelpers/utils/flxUtils";
-import { EmailHelper } from "flxhelpers/helpers/emailHelper";
-import { EncryptionHelper } from "flxhelpers/helpers/encryptionHelper";
-import { ValidationHelper } from "flxhelpers/helpers/validationHelper";
-```
 
 ## 🧩 Project Structure
 
@@ -44,7 +42,8 @@ flxhelpers/
 │   └── validationHelper.ts
 │
 └── utils/
-    └── flxUtils.ts
+    └── baseUtils.ts
+    └── dateUtils.ts
 ```
 
 ## 🧠 Usage Examples
