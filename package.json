@@ -1,13 +1,32 @@
 {
   "name": "flxhelpers",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Typescript/Javascript utilities/helpers functions",
   "main": "dist/index.js",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
+  "browser": "dist/index.client.js",
   "exports": {
-    ".": "./dist/index.js",
-    "./helpers/*": "./dist/helpers/*.js",
-    "./utils/*": "./dist/utils/*.js"
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    },
+    "./client": {
+      "import": "./dist/index.client.js",
+      "require": "./dist/index.client.js"
+    },
+    "./helpers/*": {
+      "import": "./dist/helpers/*.js",
+      "require": "./dist/helpers/*.js"
+    },
+    "./utils/*": {
+      "import": "./dist/utils/*.js",
+      "require": "./dist/utils/*.js"
+    },
+    "./types/*": {
+      "import": "./dist/types/*.js",
+      "require": "./dist/types/*.js"
+    }
   },
   "files": ["dist"],
   "scripts": {

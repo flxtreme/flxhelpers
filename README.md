@@ -31,7 +31,7 @@ import {
 ## 🧩 Project Structure
 
 ```bash
-flxhelpers/
+flxhelpers/src/
 │
 ├── types/
 │   └── validationTypes.ts
@@ -41,9 +41,12 @@ flxhelpers/
 │   ├── encryptionHelper.ts
 │   └── validationHelper.ts
 │
-└── utils/
-    └── baseUtils.ts
-    └── dateUtils.ts
+├── utils/
+│   ├── baseUtils.ts
+│   └── dateUtils.ts
+│
+├── index.ts
+└── index.client.ts
 ```
 
 ## 🧠 Usage Examples
@@ -70,7 +73,7 @@ const today = format(new Date(), "yyyy-MM-dd");
 console.log(today); // "2025-10-17"
 ```
 
-### 🔹 Custom Helpers
+### 🔹 Custom Functions
 
 ```typescript
 import { baseUtils } from "flxhelpers";
@@ -98,7 +101,7 @@ await sleep(1000);
 // → waits for 1 second
 ```
 
-## Custom Helpers
+## Custom Helpers (Server-Side only)
 
 ### 📧 EmailHelper
 
