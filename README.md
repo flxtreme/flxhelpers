@@ -15,23 +15,19 @@ yarn add flxhelpers
 
 ## 📦 Importing
 
-You can import everything at once:
+You can import everything from the root index:
 
 ```typescript
-import { flxUtils } from "flxhelpers";
+import { flxUtils, EmailHelper, EncryptionHelper, ValidationHelper } from "flxhelpers";
 ```
 
-Or import individual modules:
+Or import them individually:
 
 ```typescript
-// UUID
-import { v4 as uuidv4 } from "flxhelpers";
-
-// Bcrypt helpers
-import { hash, compare } from "flxhelpers";
-
-// Custom utilities
-import { flxUtils } from "flxhelpers";
+import { flxUtils } from "flxhelpers/utils/flxUtils";
+import { EmailHelper } from "flxhelpers/helpers/emailHelper";
+import { EncryptionHelper } from "flxhelpers/helpers/encryptionHelper";
+import { ValidationHelper } from "flxhelpers/helpers/validationHelper";
 ```
 
 ## 🧩 Project Structure
@@ -96,3 +92,60 @@ flxUtils.custom.isBlank("   ");
 await flxUtils.custom.sleep(1000);
 // → waits for 1 second
 ```
+
+## Custom Helpers
+
+### 📧 EmailHelper
+
+Validates and sanitizes email addresses with DNS MX lookup and disposable domain detection.
+
+```typescript
+import { EmailHelper } from "flxhelpers";
+
+const result = await EmailHelper.validateEmail("test@mailinator.com");
+console.log(result);
+// → { valid: false, reason: "Disposable email addresses not allowed" }
+
+console.log(EmailHelper.sanitizeEmail("john+test@gmail.com"));
+// → "john_test_gmail.com"
+```
+
+### 🔐 EncryptionHelper
+
+Provides password hashing, verification, and UUID generation utilities.
+
+```typescript
+import { EncryptionHelper } from "flxhelpers";
+
+const hash = await EncryptionHelper.hashPassword("secret123");
+const match = await EncryptionHelper.verifyPassword("secret123", hash);
+console.log({ hash, match }); // → { hash: "...", match: true }
+
+console.log(EncryptionHelper.generateId()); 
+// → "de305d54-75b4-431b-adb2-eb6b9e546014"
+```
+
+### ✅ ValidationHelper
+
+Validates incoming request data with flexible rule sets, types, and custom validators.
+
+```typescript
+import { ValidationHelper } from "flxhelpers";
+import { TValidation } from "flxhelpers/types/validationTypes";
+
+const body = {
+  email: "user@example.com",
+  roles: ["admin"],
+};
+
+await ValidationHelper.validate({
+  body,
+  rules: [
+    { field: "email", validation: TValidation.email },
+    { field: "roles", validation: TValidation.arrayString },
+  ],
+});
+// → Returns validated body or throws error
+```
+
+
