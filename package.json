@@ -1,0 +1,42 @@
+{
+  "name": "flxhelpers",
+  "version": "1.0.1",
+  "description": "Typescript/Javascript utilities/helpers fucntions",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flxtreme/flxhelpers.git"
+  },
+  "keywords": [
+    "helpers",
+    "utilities",
+    "functions",
+    "flxtremee"
+  ],
+  "type": "module",
+  "author": "flxtremee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/flxtreme/flxhelpers/issues"
+  },
+  "homepage": "https://github.com/flxtreme/flxhelpers#readme",
+  "devDependencies": {
+    "@types/bcrypt": "^6.0.0",
+    "@types/lodash": "^4.17.20",
+    "@types/node": "^24.8.1",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "date-fns": "^4.1.0",
+    "lodash": "^4.17.21",
+    "uuid": "^13.0.0"
+  }
+}
