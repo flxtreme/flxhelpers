@@ -36,28 +36,6 @@ import {
 } from "flxhelpers/client";
 ```
 
-
-## 🧩 Project Structure
-
-```bash
-flxhelpers/src/
-│
-├── types/
-│   └── validationTypes.ts
-│
-├── helpers/
-│   ├── emailHelper.ts
-│   ├── encryptionHelper.ts
-│   └── validationHelper.ts
-│
-├── utils/
-│   ├── baseUtils.ts
-│   └── dateUtils.ts
-│
-├── index.ts
-└── index.client.ts
-```
-
 ## 🧠 Usage Examples
 
 ### 🔹 Base Utils (lodash + Custom Utils)
@@ -101,7 +79,6 @@ slugify("Hello World!");
 import { fetcher } from "flxhelpers/client";
 // server
 import { fetcher } from "flxhelpers";
-
 
 // same usage
 const response = await fetcher<{ id: number; title: string }[]>("/api/posts", {
