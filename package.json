@@ -1,6 +1,6 @@
 {
   "name": "flxhelpers",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Typescript/Javascript utilities/helpers fucntions",
   "main": "dist/index.js",
   "files": [

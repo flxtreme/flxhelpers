@@ -48,47 +48,53 @@ flxhelpers/
 
 ## 🧠 Usage Examples
 
-### 🔹 Core (Lodash)
+### 🔹 Base Utils (lodash + Custom Utils)
 
 ```typescript
-import { flxUtils } from "flxhelpers";
+import { baseUtils } from "flxhelpers";
 
-const title = flxUtils.core.capitalize("hello world");
+const { capitalize } = baseUtils;
+
+const title = capitalize("hello world");
 console.log(title); // "Hello world"
 ```
 
-### 🔹 Date Utilities (date-fns)
+### 🔹 Date Utilities (date-fns + Custom Utils)
 
 ```typescript
-import { flxUtils } from "flxhelpers";
+import { dateUtils } from "flxhelpers";
 
-const today = flxUtils.date.format(new Date(), "yyyy-MM-dd");
+const { format } = dateUtils;
+
+const today = format(new Date(), "yyyy-MM-dd");
 console.log(today); // "2025-10-17"
 ```
 
 ### 🔹 Custom Helpers
 
 ```typescript
-import { flxUtils } from "flxhelpers";
+import { baseUtils } from "flxhelpers";
+
+const { slugify, isValidSlug, capitalizeWords, isBlank, sleep } = baseUtils;
 
 // Slugify a string
-flxUtils.custom.slugify("Hello World!");
+slugify("Hello World!");
 // → "hello-world"
 
 // Validate slug
-flxUtils.custom.isValidSlug("hello-world");
+isValidSlug("hello-world");
 // → true
 
 // Capitalize words
-flxUtils.custom.capitalizeWords("the quick brown fox");
+capitalizeWords("the quick brown fox");
 // → "The Quick Brown Fox"
 
 // Check blank
-flxUtils.custom.isBlank("   ");
+isBlank("   ");
 // → true
 
 // Sleep helper
-await flxUtils.custom.sleep(1000);
+await sleep(1000);
 // → waits for 1 second
 ```
 
